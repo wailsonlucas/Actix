@@ -1,22 +1,24 @@
 // #[derive(Debug)]
-use std::io::{stdin};
+// use std::io::{stdin};
 
 fn main() {
-    println!("Please inter a number");
-    let mut input = String::new();
-
-    loop {
-        input.clear();
-
-        stdin().read_line(&mut input).expect("Failed to read input");
-
-
-        match input.trim().parse::<i8>() {
-            Ok(_x) => break,
-            Err(_x) => println!("Please enter a valid number"),
-        }
-    }
     
+    let input = String::from("install");
+    let x = input_validator(&input);
+     match x {
+        Ok(value) => println!("installing the package with message {}", value),
+        Err(error) => println!("the error is {}", error),
+     }
+}
+
+fn input_validator(input: &String) -> Result<&str, &str> {
+    let err = "Ops! something went wrong";
+
+    if input == "install" {
+        Ok("installing")
+    } else {
+       Err(err)
+    }
 }
 
 
