@@ -1,17 +1,22 @@
 // #[derive(Debug)]
-use std::io::{ stdin, stdout, Write };
+use std::io::{stdin};
 
 fn main() {
-    println!("Please input a number: ");
-    stdout().flush().unwrap();
+    println!("Please inter a number");
     let mut input = String::new();
-    stdin().read_line(&mut input).unwrap();
+
+    loop {
+        input.clear();
+
+        stdin().read_line(&mut input).expect("Failed to read input");
+
+
+        match input.trim().parse::<i8>() {
+            Ok(_x) => break,
+            Err(_x) => println!("Please enter a valid number"),
+        }
+    }
     
-    number_validator(&input);
-
 }
 
-fn number_validator(n: &String) {
-    let number = n.trim().parse::<i32>().expect("Please insert a number");
-    println!("{:?}", number);
-}
+
