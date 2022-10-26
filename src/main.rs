@@ -1,24 +1,29 @@
-// #[derive(Debug)]
-// use std::io::{stdin};
 
-fn main() {
-    
-    let input = String::from("install");
-    let x = input_validator(&input);
-     match x {
-        Ok(value) => println!("installing the package with message {}", &value[2..5]),
-        Err(error) => println!("the error is {}", error),
-     }
+#[derive(Debug)]
+
+struct User {
+    username: String,
+    email: String,
+    balance: u64,
+    active: bool
 }
 
-fn input_validator(input: &String) -> Result<&str, &str> {
-    let err = "Ops! something went wrong";
+fn main() {
+    let u1 = User {
+        username: String::from("Yassine"),
+        email: String::from("yassine@rust.com"),
+        balance: 1000,
+        active: true
+    };
 
-    if input == "install" {
-        Ok("installing")
-    } else {
-       Err(err)
-    }
+    let u2 = User {
+        username: String::from("Wailson"),
+        email: String::from("wailson@rust.com"),
+        ..u1
+    };
+
+    println!("{:?}", u1);
+    println!("{:?}", u2);
 }
 
 
