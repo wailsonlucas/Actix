@@ -1,8 +1,15 @@
 #[derive(Debug)]
-struct TuppleStruct(String);
+enum Vehicle {
+    Car(String)
+}
+
+impl Vehicle {
+    fn color(&self){
+        println!("red");
+    }
+}
     
 fn main(){
-    let n:TuppleStruct = TuppleStruct(String::from("Mohammed"));
-    println!("{:?}", n);
+    let car = Vehicle::Car("BMW".to_string()).color();
 }
 
