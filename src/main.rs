@@ -1,29 +1,24 @@
 
-#[derive(Debug)]
-struct Point {
-    x:f64,
-    y:f64
-}
-    
+
 fn main(){
+    let arr:[i8; 5] = [21,12,46,42,45];
+    let x = largest(arr);
+    println!("{}", x);
 
-    let a: Point = Point {
-        x: 10.00,
-        y: 12.00
-    };
-
-    let b: Point = Point {
-        x: 5.00,
-        y: 4.00
-    };
-
-    distance(a, b);
-
+    let text: [char; 5] = ['a', 'b','c','d','e'];
+    let y = largest(text);
+    println!("{}", y);
+   
 }
 
-fn distance(a:Point ,b:Point) {
-    let long = a.x - b.x;
-    let width = a.y - b.y;
-    let distance = (long.powf(2.0) + width.powf(2.0)).sqrt();
-    println!("{}", distance);
+fn largest<T: PartialOrd + Copy>(arr: [T; 5]) -> T {
+    let mut largest = arr[0];
+    
+    for number in arr {
+        if number > largest {
+            largest = number
+        }
+    }         
+    
+    largest
 }
