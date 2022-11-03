@@ -1,17 +1,16 @@
 
-#[derive(Debug)]
-struct GenericStruct<T, U> {
-    x:T,
-    y:U
-}
+// #[derive(Debug)]
 
 
 fn main(){
-    let A:GenericStruct<i8, String> = GenericStruct {
-        x: 3,
-        y:10.to_string()
-    };
-    println!("{:#?}", A);
+   let x:Option<i8> = Some(5);
+   // println!("{:?}", x);
+
+   if let Some(7) = x {
+    println!("true",);
+   } else {
+    println!("false");
+   }
    
 }
 
