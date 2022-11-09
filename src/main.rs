@@ -1,16 +1,9 @@
+// use printer::{Server, ServerTrait};
 
-// #[derive(Debug)]
-
+mod vector;
 
 fn main(){
-   let x:Option<i8> = Some(5);
-   // println!("{:?}", x);
+   vector::run()
 
-   if let Some(7) = x {
-    println!("true",);
-   } else {
-    println!("false");
-   }
-   
 }
 
