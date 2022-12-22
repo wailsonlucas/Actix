@@ -1,9 +1,14 @@
 pub fn run() {
-	let x:Vec<i32> = vec![1,2,3,4,5];
-	let third:Option<&i32> = x.get(2);
-
-	if let Some(x) = third {
-		println!("{:?}", x);
-	} 
-	
+	#[derive(Debug)]
+	enum Types {
+		Int(i32),
+		Float(f64),
+		Text(String)
+	}	
+	let row = vec![
+		Types::Int(10),
+		Types::Float(0.13),
+		Types::Text(String::from("Hello World"))
+	];
+	println!("{:?}", row);
 }
