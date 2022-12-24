@@ -3,10 +3,18 @@ use yew::prelude::*;
 #[function_component]
 fn App() -> Html {
    html!{ <div class="container">
-            <p>{"Hello from Rust"}</p>
-            <button>{"add"}</button>
-            // <link data-trunk="true" rel="copy-file" href="0.png"/> 
-            <img src="0.png" />
+            <nav>
+               <b>{"Yassine Assembly"}</b>
+            </nav>
+            <header>
+               <p>{"Web Assembly app with Rust Language"}</p>
+            </header>
+            <main>
+               <div>
+                  <img src="0.png" />
+               </div>
+
+            </main>
          </div>
       }
 }
